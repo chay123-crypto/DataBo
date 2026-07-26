@@ -44,5 +44,5 @@ def extract_json(object):
         raise ValueError("No JSON object found in model output")
     obj=json.loads(match.group())
     if "log_url" not in obj:
-        obj["log_url"] = "https://your-public-log-url-here/run.jsonl"
+        obj["log_url"]="https://raw.githubusercontent.com/chay123-crypto/DataBo/main/run.jsonl"
     return json.dumps(obj)
