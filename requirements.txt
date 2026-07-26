@@ -1,0 +1,3 @@
+python-telegram-bot
+cerebras_cloud_sdk
+python-dotenv
