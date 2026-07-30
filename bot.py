@@ -10,7 +10,6 @@ from dotenv import load_dotenv
 from flask import Flask
 
 load_dotenv()
-print("DEBUG KEY:", os.environ.get("CEREBRAS_API_KEY"))
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 web_app = Flask(__name__)
 
@@ -36,7 +35,6 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(result_json)
 
 def main():
-    # start the web server in a background thread first
     threading.Thread(target=run_web, daemon=True).start()
 
     app = Application.builder().token(TELEGRAM_TOKEN).build()
